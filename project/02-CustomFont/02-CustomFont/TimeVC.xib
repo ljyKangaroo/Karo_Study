@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TimeVC" customModule="_2_CustomFont" customModuleProvider="target">
+            <connections>
+                <outlet property="timeLB" destination="gMZ-zL-jrv" id="imq-Ak-NJy"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3b-3S-qJx">
+                    <rect key="frame" x="146" y="371" width="82" height="30"/>
+                    <state key="normal" title="update time"/>
+                    <connections>
+                        <action selector="updateTimeAction:" destination="-1" eventType="touchUpInside" id="vF5-ac-2BM"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="now Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMZ-zL-jrv">
+                    <rect key="frame" x="0.0" y="317.5" width="375" height="33.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="gMZ-zL-jrv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="03Z-Dz-Kwy"/>
+                <constraint firstItem="O3b-3S-qJx" firstAttribute="top" secondItem="gMZ-zL-jrv" secondAttribute="bottom" constant="20" id="7gU-nY-gDM"/>
+                <constraint firstItem="gMZ-zL-jrv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FBx-Nr-4Y4"/>
+                <constraint firstItem="gMZ-zL-jrv" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Lmh-Cw-WPJ"/>
+                <constraint firstItem="O3b-3S-qJx" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="W3D-7K-FBX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gMZ-zL-jrv" secondAttribute="trailing" id="m0m-HH-TKC"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>
