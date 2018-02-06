@@ -10,7 +10,7 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
-    private var localData: [String] = ["Counter", "NowTime", "PlayVideo"]
+    private var localData: [String] = ["Counter", "NowTime", "PlayVideo", "Refresh"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class TableViewController: UITableViewController {
     }
     
     @IBAction func resetAction(_ sender: Any) {
-        localData = ["Counter", "NowTime", "PlayVideo"]
+        localData = ["Counter", "NowTime", "PlayVideo", "Refresh"]
         tableView.reloadData()
     }
     
@@ -97,6 +97,11 @@ class TableViewController: UITableViewController {
         else if indexPath.row == 2 {
             let vc = PlayVideoListVC.init(nibName: "PlayVideoListVC", bundle: nil)
             self.navigationController?.pushViewController(vc, animated: true)
+        }
+        else if indexPath.row == 3 {
+            let vc = RefreshListVC.init(nibName: "RefreshListVC", bundle: nil)
+            self.navigationController?.pushViewController(vc, animated: true)
+            
         }
         
     }
