@@ -1,5 +1,8 @@
-# 记录swift的学习
+# 记录学习
 
 
 
+- swift
+- RN
+- BST
 
