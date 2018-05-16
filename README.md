@@ -4,7 +4,7 @@
 
 - [swift](https://github.com/ljyKangaroo/Karo_Study/tree/master/swift)
 - [RN](https://github.com/ljyKangaroo/Karo_Study/tree/master/RN)
-- [BST](https://github.com/ljyKangaroo/Karo_Study/tree/master/BST)
+- [Python](https://github.com/ljyKangaroo/Karo_Study/tree/master/Python)
 - [LeetCode](https://github.com/ljyKangaroo/Karo_Study/tree/master/LeetCode)
 
 
