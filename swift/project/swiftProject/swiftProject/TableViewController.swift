@@ -9,18 +9,13 @@
 import UIKit
 
 class TableViewController: UITableViewController {
-
-    private var localData: [String] = ["Counter", "NowTime", "PlayVideo", "Refresh"]
+    private let resetData:[String] = ["Counter", "NowTime", "PlayVideo", "Refresh","CollectionView","Iphone","GCD","MVC","Rx"]
+    private var localData:[String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Movies"
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
+        localData = resetData
     }
    
     override func didReceiveMemoryWarning() {
@@ -29,7 +24,7 @@ class TableViewController: UITableViewController {
     }
     
     @IBAction func resetAction(_ sender: Any) {
-        localData = ["Counter", "NowTime", "PlayVideo", "Refresh"]
+        localData = resetData
         tableView.reloadData()
     }
     
@@ -37,7 +32,7 @@ class TableViewController: UITableViewController {
         self.isEditing = !self.isEditing;
     }
 
-    // MARK: - Table view data source
+    // MARK: - Table view Data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -84,24 +79,37 @@ class TableViewController: UITableViewController {
         return true
     }
     
+    //MARK: - UITableViewDelegate
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             let sb = UIStoryboard(name: "Main", bundle:nil)
             let vc = sb.instantiateViewController(withIdentifier: "ViewController")
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-        else if indexPath.row == 1 {
-            let vc = TimeVC.init(nibName: "TimeVC", bundle: nil)
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-        else if indexPath.row == 2 {
-            let vc = PlayVideoListVC.init(nibName: "PlayVideoListVC", bundle: nil)
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-        else if indexPath.row == 3 {
-            let vc = RefreshListVC.init(nibName: "RefreshListVC", bundle: nil)
-            self.navigationController?.pushViewController(vc, animated: true)
-            
+            navigationController?.pushViewController(vc, animated: true)
+        } else if indexPath.row == 1 {
+            let vc = TimeVC()
+            navigationController?.pushViewController(vc, animated: true)
+        } else if indexPath.row == 2 {
+            let vc = PlayVideoListVC()
+            navigationController?.pushViewController(vc, animated: true)
+        } else if indexPath.row == 3 {
+            let vc = RefreshListVC()
+            navigationController?.pushViewController(vc, animated: true)
+        } else if indexPath.row == 4 {
+            let vc = KRCollectionVC()
+            navigationController?.pushViewController(vc, animated: true)
+        } else if indexPath.row == 5 {
+            let vc = KRIphoneNumberVC()
+            navigationController?.pushViewController(vc, animated: true)
+        } else if indexPath.row == 6 {
+            let vc = GCDVC()
+            navigationController?.pushViewController(vc, animated: true)
+        } else if indexPath.row == 7 {
+            let vc = ToDoListVC()
+            navigationController?.pushViewController(vc, animated: true)
+        } else if indexPath.row == 8 {
+            let vc = RxTableVC()
+            navigationController?.pushViewController(vc, animated: true)
         }
         
     }

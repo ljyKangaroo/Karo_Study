@@ -50,7 +50,11 @@ class RefreshListVC: UIViewController {
         tableView.dataSource = (self as UITableViewDataSource)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         tableView.backgroundColor = UIColor(red:0.092, green:0.096, blue:0.116, alpha:1)
-        tableView.refreshControl = self.refreshControl
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = self.refreshControl
+        } else {
+            // Fallback on earlier versions
+        }
         
         refreshControl.addTarget(self, action: #selector(RefreshListVC.didRoadEmoji), for: .valueChanged)
         refreshControl.backgroundColor = UIColor(red:0.113, green:0.113, blue:0.145, alpha:1)
